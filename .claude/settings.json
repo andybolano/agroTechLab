@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node tools/sim-test.mjs:*)",
+      "Bash(node tools/captura.mjs:*)",
+      "Bash(node tools/servir.mjs:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ]
+  }
+}

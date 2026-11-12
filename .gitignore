@@ -1,0 +1,4 @@
+.DS_Store
+.claude/settings.local.json
+docs/img/captura.png
+node_modules/

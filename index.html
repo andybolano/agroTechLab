@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trazabilidad Finca El Porvenir</title>
+<meta name="description" content="Gemelo digital experimental de una finca ganadera: suelo, agua, vegetación, animal, clima, biodiversidad y dimensión humana como un solo sistema. Datos simulados.">
+<meta property="og:title" content="AgroTech Lab · Finca El Porvenir">
+<meta property="og:description" content="Un gemelo digital experimental para ver la finca ganadera como un solo sistema vivo. Datos 100 % simulados.">
+<meta property="og:image" content="https://andybolano.github.io/agroTechLab/docs/img/hero.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/css/app.css">
+</head>
+<body>
+<header id="top">
+  <div class="brand">
+    <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path d="M15 3 28 10.5 15 18 2 10.5Z" fill="#57a64a"/><path d="M2 10.5V18l13 7.5V18Z" fill="#7a5a3a"/><path d="M28 10.5V18l-13 7.5V18Z" fill="#5c432c"/><path d="M8 9.5c3 2 6-1 9 1s3 2 5 2" stroke="#8fd8f7" stroke-width="1.6" fill="none"/></svg>
+    <div><h1>Finca El Porvenir</h1><small>Trazabilidad de la integralidad del entorno · Caribe colombiano</small></div>
+  </div>
+  <span class="simchip">Datos simulados</span>
+  <div id="clock"></div>
+  <div id="wx"></div>
+  <div id="evchips"></div>
+  <div class="spacer"></div>
+  <div class="seg" role="group" aria-label="Velocidad de la simulación" id="speed">
+    <button data-sp="0" id="sp0">Pausa</button>
+    <button data-sp="0.5" id="sp1">½ h/s</button>
+    <button data-sp="2" id="sp2">2 h/s</button>
+    <button data-sp="12" id="sp3">12 h/s</button>
+  </div>
+  <button class="toggle" id="auto" title="Si la apagas, el hato se queda en el potrero hasta que lo muevas tú"><i></i>Rotación automática</button>
+  <button class="ghost" id="reset">Reiniciar</button>
+</header>
+<div id="main">
+  <aside class="col" id="left" aria-label="Salud del sistema"></aside>
+  <section id="center">
+    <div id="mapwrap">
+      <canvas id="map" tabindex="0" aria-label="Mapa isométrico de la finca simulada. Selecciona zonas desde el panel Detalle si usas teclado."></canvas>
+      <div class="floatbar" id="layers" role="group" aria-label="Capa del mapa"></div>
+      <div id="legend"></div>
+      <div id="zoom">
+        <button id="zi" aria-label="Acercar">+</button>
+        <button id="zo" aria-label="Alejar">−</button>
+        <button id="zr" aria-label="Encuadrar toda la finca" title="Encuadrar">⌂</button>
+      </div>
+      <div id="review"><span id="reviewt"></span><button id="golive">Volver a en vivo</button></div>
+      <div class="floatbar" id="scen" role="group" aria-label="Provocar un evento">
+        <span class="flabel">Provocar un evento</span>
+        <button class="chip ev" data-ev="heat">Ola de calor</button>
+        <button class="chip ev" data-ev="drought">Sequía</button>
+        <button class="chip ev" data-ev="storm">Aguacero</button>
+        <button class="chip ev" data-ev="fence">Cerca rota</button>
+        <button class="chip ev" data-ev="para">Brote de parásitos</button>
+        <button class="chip ev" data-ev="sensor">Falla de sensor</button>
+      </div>
+    </div>
+    <div id="tl"><canvas id="tlc" tabindex="0" role="slider" aria-label="Línea de tiempo del índice de integralidad. Arrastra para revisar el pasado." aria-valuemin="0" aria-valuemax="100"></canvas></div>
+  </section>
+  <aside class="col" id="right" aria-label="Inspector">
+    <div id="tabs" role="tablist"></div>
+    <div id="panel"></div>
+  </aside>
+</div>
+<div id="tip"></div>
+
+<script src="src/js/01-util.js"></script>
+<script src="src/js/02-world.js"></script>
+<script src="src/js/03-sim.js"></script>
+<script src="src/js/04-layers.js"></script>
+<script src="src/js/05-render.js"></script>
+<script src="src/js/06-panels.js"></script>
+<script src="src/js/07-timeline.js"></script>
+<script src="src/js/08-interaction.js"></script>
+<script src="src/js/09-boot.js"></script>
+</body>
+</html>

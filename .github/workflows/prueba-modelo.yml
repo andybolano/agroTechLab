@@ -1,0 +1,16 @@
+name: Prueba del modelo
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  simulacion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Simular 365 días y validar invariantes
+        run: node tools/sim-test.mjs 365
